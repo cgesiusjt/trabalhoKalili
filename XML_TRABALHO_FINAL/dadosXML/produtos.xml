@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?> 
+<produtos>
+
+    <produto>
+        <nome>Arroz</nome>
+        <preco>13.00</preco>
+        <imagem>imagens/arroz</imagem>
+        <descricao>arroz tipo 1 prato fino</descricao>
+    </produto>
+
+    <produto>
+        <nome>Ventilador</nome>
+        <preco>250.00</preco>
+        <imagem>imagens/ventilador</imagem>
+        <descricao>ventilador 6 pás tubo silencioso</descricao>
+    </produto>
+
+    <produto>
+        <nome>Notbook</nome>
+        <preco>2800.00</preco>
+        <imagem>imagens/notebook</imagem>
+        <descricao>notebook asus core 7 8GB 1Tera</descricao>
+    </produto>
+
+    <produto>
+        <nome>smartphone</nome>
+        <preco>1500.00</preco>
+        <imagem>imagens/smartphone</imagem>
+        <descricao>smartphone asus zenphone 3 64GB 4GB RAM OCTA-CORE</descricao>
+    </produto>
+
+</produtos>    

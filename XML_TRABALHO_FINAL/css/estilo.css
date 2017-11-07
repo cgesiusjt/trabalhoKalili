@@ -1,0 +1,18 @@
+
+body {
+	background-color: #00FFFF;
+}
+
+h6 {
+	font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+	font-size: 30px;
+}
+
+.btnCancela {
+	size: 500px;
+}
+
+.imagemCentral {
+	height: 400px;
+	width: 400px;
+}
