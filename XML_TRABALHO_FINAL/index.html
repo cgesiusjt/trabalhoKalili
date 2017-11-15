@@ -1,109 +1,106 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<title>Trabalho Final JSON</title>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" />
-		<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
-	</head>
-	<body class="container">
-		
-		<br><br><br>
-		<button class="btn btn-primary" type="button" id="btnCarregar" name="btnCarregar">Carregar</button>
-		<section>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="col-md-2"></div>
-					<div class="col-md-6">
-						<div class="row">
-							<div class="col-md-5">
-								<h6 id="titulo">Produto</h6>
-							</div>
-							<div class="col-md-1">
-								<button id="btnCancela" class="btn btn-primary btnCancela">X</button>
-							</div>
+
+<head>
+	<title>Trabalho Final JSON</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+</head>
+
+<body class="container">
+
+	<br><br><br>
+	<button class="btn btn-primary" type="button" id="btnCarregar" name="btnCarregar">Carregar</button>
+	<section>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-2"></div>
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-md-5">
+							<h6 id="titulo">Produto</h6>
 						</div>
-							<br>
-						<div class="row">
-							<div id="divCentral" class="col-md-6">
-
-							</div>
-						</div>	
+						<div class="col-md-1">
+							<button id="btnCancela" class="btn btn-primary btnCancela">X</button>
+						</div>
 					</div>
-					<div class="col-md-4">
-							<div class="col-md-6">
-								<p>Selecione um produto</p>
-								<select class="form-control" id="comboProdutos">
-									<option value="arroz">Arroz</option>
-									<option value="ventilador">ventilador</option>
-									<option value="notebook">Notbook</option>
-									<option value="smartphone">Smartphone</option>
-								</select>
-							</div>
+					<br>
+					<div class="row">
+						<div id="divCentral" class="col-md-6">
 
-							<div class="col-md-6">
-									<p>Clique em add	</p>
-								<button id="btnAdd" onclick="carregarPagina('template.html')" ref="#" class="btn btn-success">Add</button>
-							</div>
-							
 						</div>
 					</div>
 				</div>
+				<div class="col-md-4">
+					<div class="col-md-6" id="arroz">
+						<p>Selecione um produto</p>
+						<select class="form-control" id="comboProdutos">
+								</select>
+					</div>
+
+					<div class="col-md-6">
+						<p>Clique em add </p>
+						<button id="btnAdd" onclick="carregarPagina('template.html')" ref="#" class="btn btn-success">Add</button>
+					</div>
+
+				</div>
 			</div>
-			<br>
+		</div>
+		</div>
+		<br>
 
-			<div id="divDescricao" class="row">
-					<div id="conteudotArea" align="left" />
-			</div>
-			<br>
+		<div id="divDescricao" class="row">
+			<div id="conteudotArea" align="left" />
+		</div>
+		<br>
 
-			<div id="divPreco" class="row">
+		<div id="divPreco" class="row">
 
-			</div>
-			<br>
-		</section>
+		</div>
+		<br>
+	</section>
 
 
-		<script type="text/javascript" src="js/jquery-1.12.3.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script type="text/javascript">
-			var nome = "";
-			var preco = "";
-			var descricao = "";
-			var contador = 0;
-			var produtos = new Array();
-			produtos = 4;
-			$("#btnCarregar").click(function() {
-				$(document).ready(function() {
-					$.ajax({
-						type: "GET",
-						url: "dadosXML/produtos.xml",
-						dataType: "xml",
-						success: function(xml) {
-							$(xml).find('produto').each(function() {
-								nome = $(this).find('nome').text();
-								preco = $(this).find('preco').text();
-								descricao = $(this).find('descricao').text();
-                                contador ++;
-                                alert("Contador: " + contador);
-                                alert("Nome: >>" + nome + "Preço: >>" + preco + "Descrição: >>" + descricao);
-                            });
-							contador = 0;
-						}
-					});
-				});
-			});
+	<script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		var nome = "";
+		var preco = "";
+		var descricao = "";
+		var contador = 0;
+		var produtos = new Array();
+		produtos = 4;
+		// $("#btnCarregar").click(function() {
+		// 	$(document).ready(function() {
+		// 		$.ajax({
+		// 			type: "GET",
+		// 			url: "dadosXML/produtos.xml",
+		// 			dataType: "xml",
+		// 			success: function(xml) {
+		// 				$(xml).find('produto').each(function() {
+		// 					nome = $(this).find('nome').text();
+		// 					preco = $(this).find('preco').text();
+		// 					descricao = $(this).find('descricao').text();
+		//                     contador ++;
+		//                     alert("Contador: " + contador);
+		//                     alert("Nome: >>" + nome + "Preço: >>" + preco + "Descrição: >>" + descricao);
+		//                 });
+		// 				contador = 0;
+		// 			}
+		// 		});
+		// 	});
+		// });
 
-			function carregarPagina(pagina) {
-				$("#divCentral").load(pagina);
-            }
-		</script>
-		
-		
-		/* Seu codigo */
-		<script type="text/javascript">
+		function carregarPagina(pagina) {
+			$("#divCentral").load(pagina);
+		}
+	</script>
+
+
+	<script type="text/javascript">
 		$("#btnCarregar").click(function () {
 			$(document).ready(function () {
 				$("#contentArea").append("<ul></ul>");
@@ -112,29 +109,20 @@
 					url: "dadosXML/produtos.xml",
 					dataType: "xml",
 					success: function (xml) {
-						// $(xml).find('produto').each(function() {
-						// 		var nome = $(this).find('nome').text();
-						// 		var preco = $(this).find('preco').text();
-						// 		var descricao = $(this).find('descricao').text();
-						// 		console.log("Nome: >>" + nome + "Preço: >>" + preco + "Descrição: >>" + descricao);
-
-
-						// });
-
-						//making an new array and adding each property on index
+						//making an new array and adding each property on Produtos
 						$(document).ready(function () {
 							var arr = [];
 							var option = '';
-							$(xml).find("produto").each(function (index, v) {
-								arr[index] = [];
+							$(xml).find("produto").each(function (Produtos, v) {
+								arr[Produtos] = [];
 								$(v).find("nome").each(function (i, vi) {
-									arr[index].push($(vi).text());
+									arr[Produtos].push($(vi).text());
 									$(v).find("preco").each(function (i, vi) {
-										arr[index].push($(vi).text());
+										arr[Produtos].push($(vi).text());
 										$(v).find("imagem").each(function (i, vi) {
-											arr[index].push($(vi).text());
+											arr[Produtos].push($(vi).text());
 											$(v).find("descricao").each(function (i, vi) {
-												arr[index].push($(vi).text());
+												arr[Produtos].push($(vi).text());
 
 											});
 
@@ -147,8 +135,8 @@
 							//Load Combo
 							//TODO maybe export this function
 							for (var i = 0; i < arr.length; i++) {
-								                            //arr[][nome]
-								option += '<option value="' + arr[i][0]+ '">' + arr[i][0] + '</option>';
+								//arr[][nome]
+								option += '<option value="' + arr[i][0] + '">' + arr[i][0] + '</option>';
 							}
 							$('#comboProdutos').append(option);
 						});
@@ -156,6 +144,13 @@
 				});
 			});
 		});
+
+		function carregarPagina(pagina) {
+			htmlPRod = '<div class="col-md-3"> teste <img src="imagens/notebook.jpg"> </img> </div>' 
+			$('#teste').append("htmlPRod");
+			$("#divCentral").load(pagina);
+		}
 	</script>
-	</body>
+</body>
+
 </html>
